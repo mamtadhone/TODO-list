@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO List</title>
+  </head>
+  <body>
+    <main>
+      <div>TODO list</div>
+      <div>
+        <label for="add-task-field">What to be done?</label>
+        <input
+          type="text"
+          id="add-task-field"
+          placeholder="Type your task here"
+        />
+        <label for="category">Select category</label>
+        <select name="category" id="category">
+          <option value="general">General</option>
+          <option value="shopping">Shopping</option>
+          <option value="family">Family</option>
+          <option value="office">Office</option>
+          <option value="vaccation">Vaccation</option>
+          <option value="today">Today</option>
+          <option value="grocery">Grocery</option>
+        </select>
+        <button id="add-button">Add</button>
+      </div>
+      <div id="error"></div>
+      <div class="task-list">
+        <ul></ul>
+      </div>
+    </main>
+    <script src="./assets/scripts/script.js"></script>
+  </body>
+</html>
