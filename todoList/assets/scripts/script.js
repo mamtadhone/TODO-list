@@ -65,19 +65,26 @@ const editButton = document.getElementsByClassName("edit-button");
 
 function editInList(e) {
   const listRow = e.target;
+  const editDiv = document.createElement("div");
   const editTask = document.createElement("input");
+  editDiv.appendChild(editTask);
   editTask.setAttribute("type", "text");
   editTask.setAttribute("id", "editTask");
+  editTask.setAttribute("placeholder", "Type your task here");
+  // listRow.after(editTask);
 
-  const editCategory = document.createElement("input");
-  editCategory.setAttribute("type", "text");
-  editTask.setAttribute("id", "editCategory");
+  const editCategory = document.createElement("select");
+  editDiv.appendChild(editCategory);
+  editCategory.setAttribute("name", "category");
+  editCategory.setAttribute("id", "editCategory");
+
+  listRow.after(editDiv);
 
   const saveChangesButton = document.createElement("button");
   saveChangesButton.setAttribute("class", "changes-button");
   saveChangesButton.addEventListener("click", changeInList);
   function changeInList() {
     addedTask = document.getElementById("editTask").value;
-    addedTask = document.getElementById("editCategory").value;
+    category = document.getElementById("editCategory").value;
   }
 }
