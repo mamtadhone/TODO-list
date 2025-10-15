@@ -3,16 +3,22 @@ addButton.addEventListener("click", addInList);
 const taskField = document.getElementById("add-task-field");
 const errorEl = document.getElementById("error");
 
+function checkExistingTask(addedTask, taskNameElements) {
+  if (taskNameElements.length === 0) return false;
+  for (let i = 0; i < taskNameElements.length; i++) {
+    if (taskNameElements[i].innerText === addedTask) return true;
+  }
+}
 function addInList() {
   const addedTask = document.getElementById("add-task-field").value;
   const category = document.getElementById("category").value;
-  console.log(category);
+  // console.log(category);
 
   if (addedTask === "") {
     errorEl.innerText = "Cannot add empty task!";
   } else {
-    const taskName = document.getElementsByClassName("task-name");
-    if (addedTask === taskName) {
+    const taskNameElements = document.getElementsByClassName("task-name");
+    if (checkExistingTask(addedTask, taskNameElements)) {
       errorEl.innerText = "Task alraedy exists";
     } else {
       errorEl.innerText = "";
@@ -81,7 +87,9 @@ function editInList(e) {
   listRow.after(editDiv);
 
   const saveChangesButton = document.createElement("button");
+  editDiv.appendChild(saveChangesButton);
   saveChangesButton.setAttribute("class", "changes-button");
+  saveChangesButton.innerText = "Save changes";
   saveChangesButton.addEventListener("click", changeInList);
   function changeInList() {
     addedTask = document.getElementById("editTask").value;
