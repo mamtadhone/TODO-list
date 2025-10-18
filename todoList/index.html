@@ -4,29 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO List</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <main>
-      <div>TODO list</div>
-      <div>
-        <label for="add-task-field">What to be done?</label>
-        <input
-          type="text"
-          id="add-task-field"
-          placeholder="Type your task here"
-        />
-        <label for="category">Select category</label>
-        <select name="category" id="category">
-          <option value="general">General</option>
-          <option value="shopping">Shopping</option>
-          <option value="family">Family</option>
-          <option value="office">Office</option>
-          <option value="vaccation">Vaccation</option>
-          <option value="today">Today</option>
-          <option value="grocery">Grocery</option>
-        </select>
-        <button id="add-button">Add</button>
+      <div class="todo-heading">TODO list</div>
+      <div class="todo-content">
+        <div class="todo-input">
+          <label for="add-task-field">What to be done?</label>
+          <input
+            type="text"
+            id="add-task-field"
+            placeholder="Type your task here"
+          />
+        </div>
+        <div class="todo-input">
+          <label for="category">Select category</label>
+          <select name="category" id="category">
+            <option value="general">General</option>
+            <option value="shopping">Shopping</option>
+            <option value="family">Family</option>
+            <option value="office">Office</option>
+            <option value="vaccation">Vaccation</option>
+            <option value="today">Today</option>
+            <option value="grocery">Grocery</option>
+            <option value="impoprtant">Important</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <button id="add-button">Add</button>
+        </div>
       </div>
+      <hr />
       <div id="error"></div>
       <div class="task-list">
         <ul></ul>
